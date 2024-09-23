@@ -14,14 +14,14 @@ let accountState;
 console.log(accountId) ;
 console.log(accountEmail);
 console.log(accountPassword);
-console.log(accountCity);
+console.log(accountCity);  // avoid this 
 
 /*
 prefer not to use var 
 because of issue in block scope and functional scope
 */
 
-console.table([accountId , accountEmail , accountPassword , accountCity ,accountState])   // print these same things in one line and print it's table 
+console.table([accountId , accountEmail , accountPassword , accountCity ,accountState])   // print these same things in one line and print it's table   
 
 
 
