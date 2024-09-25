@@ -1,4 +1,4 @@
-// Array
+Array
 
 const myArray = [0 , 1 , 2 , 5 , 6 ]
 
@@ -7,26 +7,26 @@ const myHeros = ["Iron Man" , "Thor" , "wanda"]
 const myArray2 = new Array(1 , 2 , 3 , 4);
 
 
-// myArray.push(50)
-// myArray.pop()
+myArray.push(50)
+myArray.pop()
 
-// myArray.unshift(9)
-// myArray.shift()
+myArray.unshift(9)
+myArray.shift()
 
-// console.log(myArray.includes(5))
-// console.log(myArray.indexOf(5))
-// console.log(myArray.lastIndexOf(8))
-// console.log(myArray.indexOf(8))
+console.log(myArray.includes(5))
+console.log(myArray.indexOf(5))
+console.log(myArray.lastIndexOf(8))
+console.log(myArray.indexOf(8))
 
-// console.log(myArray);
-// console.log(myArray.length);
+console.log(myArray);
+console.log(myArray.length);
 
-// const newArray = myArray.join()
-// console.log(typeof newArray);
-// console.log( myArray);
+const newArray = myArray.join()
+console.log(typeof newArray);
+console.log( myArray);
 
 
-// sclice , slice
+sclice , slice
  
 console.log("A ", myArray);
 
