@@ -13,4 +13,21 @@ function saymyname() {
     console.log("a");
 }
 
-saymyname()
+//saymyname()
+
+// function addTwoNumbers(number1 , number2){
+//     console.log(number1+number2)
+// }
+
+// function addTwoNumbers(number1 , number2){
+//     return number1+number2 
+// }
+
+// let result = addTwoNumbers(5,4)
+
+//console.log("Result is : ",result);
+function loginUserMessage(username){
+    return `${username} just logged in now `
+}
+
+console.log(loginUserMessage("vikramaditya"))
