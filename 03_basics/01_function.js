@@ -13,7 +13,7 @@ function saymyname() {
     console.log("a");
 }
 
-//saymyname()
+saymyname()
 
 // function addTwoNumbers(number1 , number2){
 //     console.log(number1+number2)
@@ -30,4 +30,37 @@ function loginUserMessage(username){
     return `${username} just logged in now `
 }
 
-console.log(loginUserMessage("vikramaditya"))
+// console.log(loginUserMessage("vikramaditya"))
+
+function calculatePrice(...num1){
+         return num1 ;
+}
+
+// console.log(calculatePrice(20,50,60));
+
+user = {
+    username :"Vikramaditya",
+    price :9999
+}
+
+function handleObject(anyobject){
+    console.log(`username is ${anyobject.username} and the price is ${anyobject.price}`);
+    
+}
+
+// handleObject(user)
+
+handleObject({
+    username:"sam",
+    price:2999
+})
+
+
+const myNewArray = [200,500,600,1000]
+
+function returnSecondValue(allArray){
+return allArray[1];
+}
+
+// console.log(returnSecondValue(myNewArray));
+console.log(returnSecondValue([200,600,700,300]));
