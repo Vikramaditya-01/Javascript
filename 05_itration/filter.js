@@ -22,6 +22,6 @@ const books = [
     return book.edition > 2000 && book.genre === 'Science' && book.publish > 2010   ///// if you write the condition in curly braces then you need to return the value using return function.
       })
   console.log(editionofBooks);
-  console.log(editionofBooks);     ///both have same output 
-  
+  console.log(editionofBook);     ///both have same output 
+
   
