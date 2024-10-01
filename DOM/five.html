@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning part-5 </title>
+</head>
+<body style="background-color: #212121;color: bisque;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(language_name){
+        let li = document.createElement("li")
+        li.innerText =language_name
+        let ul = document.querySelector('.language')
+        ul.appendChild(li)
+    }
+    //  const myarray=["java" , "c" , "c++" , "ruby" , "Rust"]
+    //  myarray.forEach( i => addLanguage(i))
+     addLanguage("python")
+     addLanguage("Typescript")
+
+     ///// most preferable for big project.///
+    function addLanguageinOptimizeWay(lanName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(lanName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addLanguageinOptimizeWay("golang")
+
+
+///Edit///////////
+    const EditSecondLanguage = document.querySelector("li:nth-child(2)")
+      let newli = document.createElement("li")
+      newli.textContent = "mojo"
+     EditSecondLanguage.replaceWith(newli) 
+
+//////////Edit/////
+const firstlanguage = document.querySelector("li:first-child")
+firstlanguage.outerHTML = "<li>typescript</li>"
+
+////remove////
+
+const Lastlangremove = document.querySelector("li:last-child")
+Lastlangremove.remove();
+</script>
+</html>
