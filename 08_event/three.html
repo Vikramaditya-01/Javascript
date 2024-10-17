@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Vikram and Aditya</h1>
+    
+    <button id="start">Start</button>
+    <button id="stop">stop</button>
+    
+    <SCRipt>
+
+
+        let intervalId;
+
+        let myNameWithDate = function(str){
+            console.log(str,"Vikramaditya" , Date.now())
+        }
+
+
+     document.querySelector("#start").addEventListener('click',() => {
+         intervalId = setInterval(myNameWithDate,1000,"Hii")
+        
+        
+        
+     })
+     document.querySelector("#stop").addEventListener('click',() => {
+        clearInterval(intervalId)
+        console.log("stopped");
+        
+     })
+    </SCRipt>
+</body>
+</html>
