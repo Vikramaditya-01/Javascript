@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Vikram and Aditya</h1>
+    <button id="stop">stop</button>
+    <SCRipt>
+        // let sayVikramaditya = () => {
+        //     console.log("Vikramaditya");            
+        // }
+        // setTimeout(sayVikramaditya,2000);
+
+        ///// first aproch where we write the function under the setTimeout and all 
+
+        // // setInterval( sayVikramaditya, 2000);
+
+        //  setTimeout(() => {
+        //     document.querySelector("h1").innerHTML = "Hello Coders"
+        //  }, 5000);
+        //  setTimeout(() => {
+        //     document.querySelector("h1").innerHTML = "welcome to our website"
+        //  }, 10000);
+        //  setTimeout(() => {
+        //     document.querySelector("h1").innerHTML = "here you can understand setTimeout and setInterval "
+        //  }, 15000);
+        //  setTimeout(() => {
+        //     document.querySelector("h1").innerHTML = "for understanding All these you need to watch our source code "
+        //  }, 20000);
+
+        
+    /////////// second approch where we use function refrence for all these
+
+      const changeText = function(){
+        document.querySelector("h1").innerHTML = "Hello Coders"
+      }
+      const notChange = setTimeout(changeText,2000);
+    
+        let btn = document.querySelector("#stop")
+        btn.addEventListener("click" , function () {
+            clearTimeout(notChange)
+            console.log("stop");
+            
+        })
+
+
+
+    </SCRipt>
+</body>
+</html>
