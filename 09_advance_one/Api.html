@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Card</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: antiquewhite;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Hide card by default */
+        .card {
+            display: none;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 500px;
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Shadow on hover */
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease; /* Image zoom on hover */
+        }
+
+        .card img:hover {
+            transform: scale(1.2); /* Zoom the image on hover */
+        }
+
+        .card .container {
+            padding: 20px 0;
+        }
+
+        .card h4 {
+            margin: 20px 0 10px;
+            font-size: 24px;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        button {
+            background-color: #6200EA;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3700B3;
+            transform: scale(1.1); /* Button zoom effect on hover */
+        }
+
+    </style>
+</head>
+<body>
+    
+    <button id="getButton">Get GitHub User Info</button>
+    <div class="card"></div>
+
+    <script>
+        let name;
+        let follower;
+        let pic;
+        let profile;
+
+        let requestUrl = 'https://api.github.com/users/Vikramaditya-01';
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const data = JSON.parse(this.responseText);
+                name = data.name;
+                follower = data.followers;
+                pic = data.avatar_url;
+                profile = data.html_url;
+            }
+        };
+        xhr.send();
+        
+        let card = document.querySelector(".card");
+        let button = document.querySelector("#getButton");
+
+        button.addEventListener('click', () => {
+            // Hide the button and show the card
+            button.style.display = 'none';
+            card.style.display = 'block';
+
+            // Populate card with data
+            card.innerHTML = `
+                <img class="image" src="${pic}" alt="Avatar">
+                <div class="container">
+                    <h4><b>${name}</b></h4>
+                    <p>${follower} followers</p>
+                </div>
+            `;
+        });
+
+        // Redirect to profile when the card is clicked
+        card.addEventListener('click', () => {
+            window.open(profile, '_blank');
+        });
+    </script>
+
+</body>
+</html>
