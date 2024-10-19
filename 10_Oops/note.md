@@ -25,7 +25,7 @@ class Person {
 
 const person1 = new Person('Alice', 25);
 person1.greet(); // Output: Hello, my name is Alice and I am 25 years old.
-
+```
 ### Why OOP in JavaScript?
 
 OOP allows developers to structure their code using objects, making it easier to manage complexity, reuse code, and build scalable applications. It also provides a framework for solving problems by modeling real-world scenarios.
