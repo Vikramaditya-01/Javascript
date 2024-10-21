@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bind in React</title>
+</head>
+<body>
+<button class="btn">Button clicked</button>    
+
+</body>
+<script>
+     
+     class React{
+        constructor(){
+            this.librery = "React";
+            this.server = "https://localhost:3000"; 
+            
+            // document.querySelector(".btn").addEventListener('click' , this.handleClick())
+            document.querySelector(".btn").addEventListener('click' , this.handleClick .bind(this))
+            // document.querySelector(".btn").addEventListener('click' , ()=> this.handleClick())
+
+        }
+
+         handleClick(){
+             console.log("Button clicked");
+             console.log(this.server);
+             
+         }
+
+     }
+
+
+        const react = new React();
+        
+
+</script>
+</html>
