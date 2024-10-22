@@ -11,64 +11,64 @@
 </body>
 <script>
 
-//                             ///////// lexical scoping //////////
+                            ///////// lexical scoping //////////
 
-// function init() {
-//   var name = "Mozilla"; 
-//   function displayName() {
+function init() {
+  var name = "Mozilla"; 
+  function displayName() {
     
-//     console.log(name); 
-//   }
-//   displayName();
-// }
-// init();
+    console.log(name); 
+  }
+  displayName();
+}
+init();
 
-// function outer(){
-//     let name = "Vikramaditya"
-//     // console.log(name2);
+function outer(){
+    let name = "Vikramaditya"
+    // console.log(name2);
 
-//     function innerOne(){
-//         console.log(name);
-//         name2 = "Munmun"  // this will be global variable because it is not declared with let or const
-//         let name3 = "Vikram" // this will be local variable
-//     }
+    function innerOne(){
+        console.log(name);
+        name2 = "Munmun"  // this will be global variable because it is not declared with let or const
+        let name3 = "Vikram" // this will be local variable
+    }
 
-//     function innerTwo(){
-//         console.log(name);
-//         console.log(name2);
-//         // console.log(name3); // this will give error because name3 is local variable of innerOne function
+    function innerTwo(){
+        console.log(name);
+        console.log(name2);
+        // console.log(name3); // this will give error because name3 is local variable of innerOne function
         
         
-//     }
+    }
 
-//     innerOne();
-//     innerTwo();
+    innerOne();
+    innerTwo();
 
-//     console.log(name2);
-//     // console.log(name3); // this will give error because name3 is local variable of innerOne function
+    console.log(name2);
+    // console.log(name3); // this will give error because name3 is local variable of innerOne function
     
     
-// }
+}
 
-// outer();
+outer();
 
 
-//                              ////////////// Closure /////////////
+                             ////////////// Closure /////////////
 
-// function makeFunc() {
-//     const name = "Mozilla";
+function makeFunc() {
+    const name = "Mozilla";
 
-//     function displayName() {
-//      console.log(name);
-//     }
+    function displayName() {
+     console.log(name);
+    }
 
-//   return displayName; // this will return the total makeFunc function with displayName function(lexical scoping)
-//   // Inshort it will return the lexical scoping of makeFunc function
+  return displayName; // this will return the total makeFunc function with displayName function(lexical scoping)
+  // Inshort it will return the lexical scoping of makeFunc function
 
-// }
+}
 
-// const myFunc = makeFunc();
-// myFunc();
+const myFunc = makeFunc();
+myFunc();
 
 
 
