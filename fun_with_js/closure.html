@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body style="background-color:#212121;">
+    <button id="orange">Orange</button>
+    <button id="Green">Green</button>
+</body>
+<script>
+
+//                             ///////// lexical scoping //////////
+
+// function init() {
+//   var name = "Mozilla"; 
+//   function displayName() {
+    
+//     console.log(name); 
+//   }
+//   displayName();
+// }
+// init();
+
+// function outer(){
+//     let name = "Vikramaditya"
+//     // console.log(name2);
+
+//     function innerOne(){
+//         console.log(name);
+//         name2 = "Munmun"  // this will be global variable because it is not declared with let or const
+//         let name3 = "Vikram" // this will be local variable
+//     }
+
+//     function innerTwo(){
+//         console.log(name);
+//         console.log(name2);
+//         // console.log(name3); // this will give error because name3 is local variable of innerOne function
+        
+        
+//     }
+
+//     innerOne();
+//     innerTwo();
+
+//     console.log(name2);
+//     // console.log(name3); // this will give error because name3 is local variable of innerOne function
+    
+    
+// }
+
+// outer();
+
+
+//                              ////////////// Closure /////////////
+
+// function makeFunc() {
+//     const name = "Mozilla";
+
+//     function displayName() {
+//      console.log(name);
+//     }
+
+//   return displayName; // this will return the total makeFunc function with displayName function(lexical scoping)
+//   // Inshort it will return the lexical scoping of makeFunc function
+
+// }
+
+// const myFunc = makeFunc();
+// myFunc();
+
+
+
+
+
+
+</script>
+<script>
+                     ///// Real time example of closure /////
+
+// document.getElementById("orange").onclick = function(){
+//     document.body.style.backgroundColor = "orange"; 
+// };
+
+// document.getElementById("Green").addEventListener("click", function(){
+//     document.body.style.backgroundColor = "green";
+// });     // this will work but we can not use it if someone gives us 1000 buttons to change the color of body then we have to write 1000 times this code
+
+
+//         ///////// so we will use closure to solve this problem//////////////////
+
+function clickHandler(color){
+    
+    // document.body.style.backgroundColor = color; // this will not work because it will not return anything
+
+    return function(){                   // this will return the function with lexical scoping of clickHandler function
+        document.body.style.backgroundColor = color;
+    }    
+}
+
+document.getElementById("orange").onclick = clickHandler("orange");
+document.getElementById("Green").onclick = clickHandler("green");
+
+
+</script>
+</html>
